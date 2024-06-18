@@ -1,6 +1,7 @@
 import { readData, writeData } from '../../../lib/data';
+import { middleware } from './middleware';
 
-export default function handler(req, res) {
+const handler(req, res) {
   const { id } = req.query;
   const posts = readData();
   const postIndex = posts.findIndex((post) => post.id === parseInt(id));
@@ -42,3 +43,6 @@ export default function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+
+
+export default middleware(handler);

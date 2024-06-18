@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import { middleware } from './middleware';
+
 
 const filePath = path.join(process.cwd(), 'data', 'projects.json');
 
-export default function handler(req, res) {
+const  handler(req, res) {
   if (req.method === 'GET') {
     try {
       const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -40,3 +42,6 @@ export default function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+
+
+export default middleware(handler);

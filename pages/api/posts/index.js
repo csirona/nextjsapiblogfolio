@@ -1,6 +1,7 @@
 import { readData, writeData } from '../../../lib/data';
+import { middleware } from './middleware';
 
-export default function handler(req, res) {
+const handler(req, res) {
   if (req.method === 'GET') {
     const posts = readData();
     res.status(200).json(posts);
@@ -25,3 +26,5 @@ export default function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+
+export default middleware(handler);
