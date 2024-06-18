@@ -1,11 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import { middleware } from './middleware';
-
 
 const filePath = path.join(process.cwd(), 'data', 'projects.json');
 
-const  handler(req, res) {
+export default function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   if (req.method === 'GET') {
     try {
       const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -42,6 +41,3 @@ const  handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
-
-
-export default middleware(handler);
