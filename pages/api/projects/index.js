@@ -1,19 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 
-const filePath = path.join(process.cwd(), 'data', 'projects.json');
-
-export default function handler(req, res) {
-  // Set CORS headers
+// Middleware to handle CORS
+const allowCors = (fn) => async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
   // Handle preflight request
   if (req.method === 'OPTIONS') {
     res.status(200).end();
     return;
   }
+  return await fn(req, res);
+};
+
+const handler = async (req, res) => {
+  const filePath = path.join(process.cwd(), 'data', 'projects.json');
 
   if (req.method === 'GET') {
     try {
@@ -50,4 +52,6 @@ export default function handler(req, res) {
     res.setHeader('Allow', ['GET', 'POST', 'DELETE']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
-}
+};
+
+export default allowCors(handler);
