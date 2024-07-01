@@ -30,17 +30,20 @@ const handler = async (req, res) => {
       res.status(500).json({ error: 'Could not read data file.' });
     }
   } else if (req.method === 'POST') {
-    try {
-      const { title, description, tag, gitlink } = req.body;
-      const newProject = { title, description, tag, gitlink };
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      const projects = JSON.parse(fileContents);
-      const updatedProjects = [...projects, newProject];
-      fs.writeFileSync(filePath, JSON.stringify(updatedProjects, null, 2));
-      res.status(201).json({ message: 'Project added successfully.' });
-    } catch (error) {
-      res.status(500).json({ error: 'Could not add project.' });
-    }
+  try {
+    console.log('Received POST request');
+    console.log('Request body:', req.body); // Verifica que estás recibiendo los datos esperados
+    const { title, description, tag, gitlink } = req.body;
+    const newProject = { title, description, tag, gitlink };
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const projects = JSON.parse(fileContents);
+    const updatedProjects = [...projects, newProject];
+    fs.writeFileSync(filePath, JSON.stringify(updatedProjects, null, 2));
+    res.status(201).json({ message: 'Project added successfully.' });
+  } catch (error) {
+    console.error('Error handling POST request:', error);
+    res.status(500).json({ error: 'Could not add project.' });
+  }
   } else if (req.method === 'DELETE') {
     try {
       const { id } = req.body;
