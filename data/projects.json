@@ -1,8 +1,26 @@
 [
-  {
-    "title": "Nuevo proyecto",
-    "description": "Descripción del nuevo proyecto",
-    "tag": "tag1, tag2",
-    "gitlink": "https://github.com/nuevo-proyecto"
-  }
-]
+    {
+      "title": "App Suplemento Surtidor Combustible",
+      "description": "Esta aplicación tipo desktop, desarrollada en Python con PyGUI, está conectada a los servicios internos de la empresa mediante API REST y SOAP. El sistema funciona de la siguiente manera: una vez identificado el trabajador por medio de un identificador NFC, se cargan sus datos. Si se requiere, el trabajador ingresa el odómetro, y a continuación, se habilita el surtidor de combustible mediante un relé con conexión RJ45.",
+      "tag": "Python, GUI, Electronica, SOAP, API",
+      "gitlink": "https://github.com/nuevo-proyecto"
+    },
+    {
+        "title": "Modulo Vivero",
+        "description": "Este módulo del ERP interno permite el registro de datos provenientes de cuatro actividades diferentes: Registro de Temperatura de Parvas, Esterilización de Herramientas, Medición de Plantas y Control de Mortalidad. Estos datos son de gran relevancia, ya que el sistema permite emitir informes en formatos Excel y PDF. Además, los datos pueden ser utilizados para la creación de gráficos y proyecciones, facilitando así la toma de decisiones informadas.",
+        "tag": "GeneXus, SQL Server",
+        "gitlink": "https://github.com/nuevo-proyecto"
+      },
+      {
+        "title": "Modulo Seguridad",
+        "description": "Este módulo del ERP interno permite el registro de datos sobre charlas y capacitaciones realizadas, así como los elementos entregados a cada trabajador. La principal finalidad de este módulo es agilizar la búsqueda de información, facilitando la toma de decisiones y la realización de auditorías.",
+        "tag": "GeneXus, SQL Server",
+        "gitlink": "https://github.com/nuevo-proyecto"
+      },
+      {
+        "title": "Proyecto Bonus: Simulación de Marcas de un Corredor o Nadador Profesional con LEDs",
+        "description": "Este proyecto simula las marcas de un corredor o nadador profesional utilizando una tira de LEDs programable conectada a un Raspberry Pi que ejecuta un programa en MicroPython. La programación y ejecución fueron completadas con éxito, sin embargo, no se logró simular las marcas reales debido a que la velocidad de cálculo era mayor que el tiempo de ejecución de cada LED.",
+        "tag": "tag1, tag2",
+        "gitlink": "https://github.com/nuevo-proyecto"
+      }
+  ]
