@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "First Post",
-    "description": "This is the first post",
-    "content": "This is the content of the first post",
-    "section": "general",
-    "tag": "tag1, tag2",
-    "gitlink": "http://example.com",
-    "created_at": "2024-06-18T14:03:21.490Z"
+    "title": "Looking for a Job",
+    "description": "I am currently looking for a Job",
+    "content": "Recently, I stopped working at my usual job due to the company's needs. The company operates in the forestry sector, and winter is a challenging time for the industry. My superiors highly recommended me for other opportunities and assured me that I should return when better times come.",
+    "section": "Job",
+    "tag": "GeneXus, JobSeeking",
+    "gitlink": "",
+    "created_at": "2024-07-03T14:03:21.490Z"
   }
 ]
